@@ -26,7 +26,7 @@ npm start
 
 
 
-Our client a librarian who want to be able to list all his book
+Our client is a librarian who want to be able to list all his book
 
 
 
