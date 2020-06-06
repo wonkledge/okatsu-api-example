@@ -1,0 +1,39 @@
+{
+  "name": "okatsu-api-example",
+  "version": "1.0.0",
+  "description": "An example of okatsu framework implementation",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "dev": "nodemon --exec 'babel-node src/index.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wonkledge/okatsu-api-example.git"
+  },
+  "keywords": [
+    "Framework",
+    "okatsu",
+    "api",
+    "nodejs",
+    "example"
+  ],
+  "author": "wonkledge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wonkledge/okatsu-api-example/issues"
+  },
+  "homepage": "https://github.com/wonkledge/okatsu-api-example#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.1",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.1",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "@wonkledge/okatsu": "0.0.6",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
