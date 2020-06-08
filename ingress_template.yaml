@@ -11,7 +11,7 @@ spec:
     - host: okatsu.fr
       http:
         paths:
-          - path: /library
+          - path: ${RESOURCE_PATH}
             backend:
               serviceName: ${DEPLOYMENT_NAME}-svc
               servicePort: 80
