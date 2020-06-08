@@ -17,7 +17,6 @@ spec:
     spec:
       containers:
         - name: okatsuapiexample-app
-          image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:v$CI_PIPELINE_ID
           ports:
             - containerPort: 8080
       dnsPolicy: Default
