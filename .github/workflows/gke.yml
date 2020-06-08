@@ -23,7 +23,7 @@ env:
   GKE_CLUSTER: turtleside
   IMAGE: okatsu-api-example
   REGISTRY_HOSTNAME: gcr.io
-  DEPLOYMENT_NAME: okatsuapiexample
+  DEPLOYMENT_NAME: okatsu-api-example
 
 jobs:
   setup-build-publish-deploy:
@@ -70,7 +70,8 @@ jobs:
       run: |
         sudo apt-get install gettext-base
         envsubst < deployment_template.yaml > deployment.yaml
-        cat deployment.yaml
+        envsubst < service_template.yaml > service.yaml
+        envsubst < ingress_template.yaml > ingress.yaml
 
     # Deploy the Docker image to the GKE cluster
     - name: Deploy

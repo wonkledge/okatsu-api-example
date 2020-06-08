@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ${DEPLOYMENT_NAME}
+spec:
+  tls:
+    - hosts:
+        - okatsu.fr
+      secretName: okatsu-secret
+  rules:
+    - host: okatsu.fr
+      http:
+        paths:
+          - path: /library
+            backend:
+              serviceName: ${DEPLOYMENT_NAME}-svc
+              servicePort: 80
+
