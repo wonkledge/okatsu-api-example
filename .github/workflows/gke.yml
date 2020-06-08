@@ -68,7 +68,7 @@ jobs:
       # Set up kustomize
     - name: build k8s file
       run: |
-        apt-get install gettext-base
+        sudo apt-get install gettext-base
         envsubst < deployment_template.yaml > deployment.yaml
         cat deployment.yaml
 
