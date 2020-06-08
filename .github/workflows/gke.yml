@@ -23,7 +23,7 @@ env:
   GKE_CLUSTER: turtleside
   IMAGE: okatsu-api-example
   REGISTRY_HOSTNAME: gcr.io
-  DEPLOYMENT_NAME: okatsu-api-example
+  DEPLOYMENT_NAME: okatsuapiexample
 
 jobs:
   setup-build-publish-deploy:
