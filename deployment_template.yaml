@@ -17,6 +17,7 @@ spec:
     spec:
       containers:
         - name: okatsuapiexample-app
+          image: $REGISTRY_HOSTNAME/$GKE_PROJECT/$IMAGE:${GITHUB_SHA}
           ports:
             - containerPort: 8080
       dnsPolicy: Default

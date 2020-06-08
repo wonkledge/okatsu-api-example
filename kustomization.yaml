@@ -1,5 +1,5 @@
 commonLabels:
   app: okatsuapiexample
 resources:
-  - deployment.yaml
+  - deployment_template.yaml
   - service.yaml
