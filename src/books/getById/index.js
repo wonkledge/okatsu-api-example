@@ -21,6 +21,7 @@ const fetchBooksById = async (params) => {
 
 //path parameter are store inside property params of object req
 const getById = (req, res) => {
+    console.log(req.params);
     return feature(sendResponse(res), query(fetchBooksById), checkParameters(validators))(req.params);
 }
 

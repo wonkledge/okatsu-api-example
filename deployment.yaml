@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: okatsuapiexample
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: okatsuapiexample
+  template:
+    metadata:
+      name: okatsuapiexample
+      namespace: default
+      labels:
+        app: okatsuapiexample
+    spec:
+      containers:
+        - name: okatsuapiexample-app
+          image: $CI_REGISTRY/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:v$CI_PIPELINE_ID
+          ports:
+            - containerPort: 8080
+      dnsPolicy: Default
