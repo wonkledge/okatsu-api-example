@@ -72,14 +72,14 @@ jobs:
     - name: build k8s file
       run: |
         sudo apt-get install gettext-base
-        envsubst < deployment_template.yaml > deployment.yaml
-        envsubst < service_template.yaml > service.yaml
-        envsubst < ingress_template.yaml > ingress.yaml
+        envsubst < .deploy/deployment_template.yaml > .deploy/deployment.yaml
+        envsubst < .deploy/service_template.yaml > .deploy/service.yaml
+        envsubst < .deploy/ingress_template.yaml > .deploy/ingress.yaml
 
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |
         gcloud container clusters get-credentials $GKE_CLUSTER --zone $GKE_ZONE --project $GKE_PROJECT
-        ./kustomize build . | kubectl apply -f -
+        ./kustomize build .deploy/ | kubectl apply -f -
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide
