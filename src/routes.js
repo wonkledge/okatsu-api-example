@@ -5,7 +5,9 @@ import getAllWithMapping from "./books/getAllWithMapping";
 import getById from "./books/getById";
 
 let router = express.Router();
-
+router.get('/', (req, res) => {
+    res.json({ data: 'coucou'});
+})
 router.get('/books/success', getAll);
 router.get('/books/successWithMapping', getAllWithMapping);
 router.get('/books/failed', getAllFailed);
