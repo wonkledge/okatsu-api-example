@@ -5,10 +5,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - okatsu.fr
-      secretName: okatsu-secret
+        - ${HOST_NAME}
+      secretName: ${SECRET_NAME}
   rules:
-    - host: okatsu.fr
+    - host: ${HOST_NAME}
       http:
         paths:
           - path: ${RESOURCE_PATH}

@@ -25,6 +25,8 @@ env:
   REGISTRY_HOSTNAME: gcr.io
   DEPLOYMENT_NAME: okatsu-api-example
   RESOURCE_PATH: /library
+  HOST_NAME: turtleside.io
+  SECRET_NAME: turtleside.io
 
 jobs:
   setup-build-publish-deploy:
