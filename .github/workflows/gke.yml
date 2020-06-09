@@ -24,7 +24,7 @@ env:
   IMAGE: okatsu-api-example
   REGISTRY_HOSTNAME: gcr.io
   DEPLOYMENT_NAME: okatsu-api-example
-  RESOURCE_PATH: /library
+  RESOURCE_PATH: /wowowo
   HOST_NAME: turtleside.io
   SECRET_NAME: turtleside.io
 
@@ -71,6 +71,9 @@ jobs:
       # Set up kustomize
     - name: build k8s file
       run: |
+        set -a
+        source .env
+        echo $RESOURCE_PATH
         sudo apt-get install gettext-base
         envsubst < .deploy/deployment_template.yaml > .deploy/deployment.yaml
         envsubst < .deploy/service_template.yaml > .deploy/service.yaml
